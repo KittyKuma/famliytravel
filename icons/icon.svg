@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="오사카 가족여행">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff8fb1"/>
+      <stop offset=".55" stop-color="#ffb3cd"/>
+      <stop offset="1" stop-color="#7ec8e3"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <!-- 구름 -->
+  <g fill="#ffffff" opacity=".9">
+    <circle cx="118" cy="120" r="26"/><circle cx="150" cy="112" r="32"/><circle cx="184" cy="122" r="24"/>
+    <rect x="116" y="120" width="72" height="24" rx="12"/>
+  </g>
+  <!-- 별 -->
+  <path fill="#ffd76a" d="M392 96l11 26 28 3-21 19 6 28-24-15-24 15 6-28-21-19 28-3z"/>
+  <!-- 성 (천수각 단순화) -->
+  <g fill="#fff8fb" stroke="#e85f8a" stroke-width="10" stroke-linejoin="round">
+    <path d="M176 300 h160 l-14 -34 h-132 z"/>
+    <path d="M198 266 h116 l-12 -30 h-92 z"/>
+    <path d="M224 236 h64 l-10 -26 h-44 z"/>
+    <path d="M244 210 h24 v-22 h-24 z"/>
+  </g>
+  <rect x="168" y="300" width="176" height="118" rx="10" fill="#ffffff" stroke="#3a9dc4" stroke-width="10"/>
+  <rect x="236" y="352" width="40" height="66" rx="20" fill="#7ec8e3"/>
+  <!-- 하트 -->
+  <path fill="#e85f8a" d="M256 452c-40-28-62-48-62-74a30 30 0 0 1 58-11 30 30 0 0 1 58 11c0 26-22 46-54 74z" opacity=".95"/>
+</svg>

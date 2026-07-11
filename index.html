@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5" />
+  <meta name="theme-color" content="#ff8fb1" />
+  <meta name="description" content="부산→오사카 가족여행 가이드 (2박3일, 폭염 안전 중심, 일정·지하철·일본어·ICOCA·준비물·비상)" />
+  <title>오사카 가족여행 가이드</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./icons/icon.svg" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="hd-row">
+      <a class="hd-home" href="#/home" aria-label="홈">🏯</a>
+      <div class="hd-title">오사카 가족여행 <span id="dbadge" class="dbadge"></span></div>
+      <button id="installBtn" class="install-btn" hidden>앱 설치</button>
+    </div>
+  </header>
+
+  <main id="view" class="view"><!-- 렌더링 --></main>
+
+  <nav class="tabbar">
+    <a href="#/home">🏠<span>홈</span></a>
+    <a href="#/today">📍<span>오늘</span></a>
+    <a href="#/heat">☀️<span>폭염</span></a>
+    <a href="#/phrases">🗣️<span>회화</span></a>
+    <a href="#/plan">🗓️<span>전체</span></a>
+  </nav>
+
+  <script src="./js/data.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>

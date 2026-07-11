@@ -1,0 +1,16 @@
+{
+  "name": "오사카 가족여행 가이드",
+  "short_name": "오사카여행",
+  "description": "부산→오사카 2박3일 가족여행 가이드 (폭염 안전·일정·지하철·일본어·ICOCA·준비물·비상)",
+  "lang": "ko",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fff8fb",
+  "theme_color": "#ff8fb1",
+  "icons": [
+    { "src": "./icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "./icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}
