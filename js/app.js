@@ -62,7 +62,7 @@
     else if (d1 <= 0 && d3 >= 0) heroMsg = '여행 중 ✈️ · 오늘도 시원하게 안전하게!';
     else heroMsg = '여행이 끝났어요. 수고하셨어요! 💛';
     hero.innerHTML =
-      '<div class="hero-emoji">🏯🎀🐋</div>' +
+      '<div class="hero-emoji">🏯🎀🧱</div>' +
       '<h1 class="hero-title">' + esc(T.meta.title) + '</h1>' +
       '<p class="hero-sub">' + esc(T.meta.subtitle) + ' · ' + esc(T.meta.party) + '</p>' +
       '<div class="hero-count">' + heroMsg + '</div>' +
@@ -76,7 +76,7 @@
       ['#/today', '📍', '오늘의 일정', '날짜에 맞춰 자동'],
       ['#/plan', '🗓️', '전체 일정', 'DAY 1·2·3'],
       ['#/heat', '☀️', '폭염 안전', '가장 중요!'],
-      ['#/places', '🏯', '장소 상세', '수족관·성·산리오'],
+      ['#/places', '🏯', '장소 상세', '레고랜드·성·산리오'],
       ['#/food', '🍽️', '식당 추천', '아이 동반'],
       ['#/phrases', '🗣️', '일본어 회화', '음성·복사'],
       ['#/metro', '🚉', '지하철·이동', '노선도'],
@@ -99,7 +99,7 @@
 
     // 아이 모드 안내
     const kid = card('🎀 아이 모드', 'kid-card');
-    kid.innerHTML += '<p>6세 아이가 좋아할 곳만 모았어요: <b>수족관 고래상어 🐋</b>, <b>오사카성 🏯</b>, <b>산리오 🎀</b>.</p>' +
+    kid.innerHTML += '<p>6세 아이가 좋아할 곳만 모았어요: <b>레고랜드 블록놀이 🧱</b>, <b>오사카성 🏯</b>, <b>산리오 🎀</b>.</p>' +
       '<a class="mapbtn kid" href="#/kids">아이 코스 보기 <span class="go">GO</span></a>';
     wrap.appendChild(kid);
 
