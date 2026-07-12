@@ -76,6 +76,7 @@
       ['#/today', '📍', '오늘의 일정', '날짜에 맞춰 자동'],
       ['#/plan', '🗓️', '전체 일정', 'DAY 1·2·3'],
       ['#/heat', '☀️', '폭염 안전', '가장 중요!'],
+      ['#/rain', '🌧️', '비 오는 날', '실내 대체지'],
       ['#/places', '🏯', '장소 상세', '레고랜드·성·산리오'],
       ['#/food', '🍽️', '식당 추천', '아이 동반'],
       ['#/phrases', '🗣️', '일본어 회화', '음성·복사'],
@@ -136,14 +137,42 @@
     T.days.forEach((d) => wrap.appendChild(renderDay(d, false)));
 
     // 대체 일정
-    const rain = card(T.alt.rain.title, 'alt-card');
-    rain.innerHTML += '<ul class="bul">' + T.alt.rain.items.map((i) => '<li>' + esc(i) + '</li>').join('') + '</ul>';
-    wrap.appendChild(rain);
-    const tired = card(T.alt.tired.title, 'alt-card');
-    tired.innerHTML += '<ul class="bul">' + T.alt.tired.items.map((i) => '<li>' + esc(i) + '</li>').join('') + '</ul>';
-    wrap.appendChild(tired);
+    wrap.appendChild(buildRainCard());
+    wrap.appendChild(buildTiredCard());
     return wrap;
   };
+
+  // 비 오는 날 대체지 (전용 페이지)
+  pages.rain = function () {
+    const wrap = el('div');
+    wrap.appendChild(heatBanner());
+    wrap.appendChild(buildRainCard());
+    wrap.appendChild(buildTiredCard());
+    return wrap;
+  };
+
+  function buildRainCard() {
+    const rain = card(T.alt.rain.title, 'alt-card');
+    if (T.alt.rain.note) rain.innerHTML += '<p class="note">' + esc(T.alt.rain.note) + '</p>';
+    const list = el('div', 'rain-list');
+    T.alt.rain.places.forEach((p) => {
+      list.innerHTML += '<div class="rain-item">' +
+        '<div class="rain-top"><b>' + esc(p.name) + '</b>' + (p.kid ? ' <span class="tl-kid">🎀 아이</span>' : '') + '</div>' +
+        '<div class="ja">' + esc(p.ja) + '</div>' +
+        '<div class="rain-why">' + esc(p.why) + '</div>' +
+        '<div class="rain-meta">🚉 ' + esc(p.access) + (p.fee ? ' · 💴 ' + esc(p.fee) : '') + '</div>' +
+        (p.verified ? '<div>' + verifiedTag(p.verified) + '</div>' : '') +
+        '<div class="tl-actions">' + mapBtn('지도', p.map) + '<a class="mapbtn" href="' + mapDir(p.map) + '" target="_blank" rel="noopener">🧭 길찾기</a></div>' +
+        '</div>';
+    });
+    rain.appendChild(list);
+    return rain;
+  }
+  function buildTiredCard() {
+    const tired = card(T.alt.tired.title, 'alt-card');
+    tired.innerHTML += '<ul class="bul">' + T.alt.tired.items.map((i) => '<li>' + esc(i) + '</li>').join('') + '</ul>';
+    return tired;
+  }
 
   function renderDay(day, single) {
     const c = card(day.label, 'day-card');

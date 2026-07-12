@@ -134,6 +134,13 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .warn-card{background:var(--danger-bg);border-color:#ffcdd2}
 .warn-card .card-h{color:var(--danger)}
 
+/* 비 오는 날 대체지 */
+.rain-list{display:grid;gap:12px;margin-top:6px}
+.rain-item{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fbfdff}
+.rain-top{display:flex;align-items:center;gap:8px;font-weight:800}
+.rain-why{margin-top:6px;font-size:.92rem;color:#514c5b;line-height:1.55}
+.rain-meta{margin-top:6px;font-size:.85rem;color:var(--sky-d);font-weight:600}
+
 /* 장소 리스트 */
 .place-list{display:grid;gap:10px}
 .place-mini{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);
