@@ -396,7 +396,7 @@
     const s = T.sake;
     const intro = card('🍶 가성비 사케 추천');
     intro.innerHTML += '<p class="lead">' + esc(s.intro) + '</p>';
-    intro.innerHTML += '<p class="note">병 그림은 알아보기 쉽게 그린 일러스트예요(실제 라벨과 다를 수 있어요). 매장에선 큰 일본어 표기로 찾으세요.</p>';
+    intro.innerHTML += '<p class="note">병 그림은 알아보기 쉽게 그린 일러스트예요. <b>📷 실제 사진 보기</b>로 진짜 제품을 확인하세요. 가격은 <b>720ml 병 기준 대략값</b>(정가·시중)이라 돈키호테·슈퍼 실제가는 다를 수 있어요.</p>';
     wrap.appendChild(intro);
     s.groups.forEach((g, gi) => {
       const color = SAKE_COLORS[gi % SAKE_COLORS.length];
@@ -410,6 +410,7 @@
             '<div class="sake-ja">' + esc(it.ja) + '</div>' +
             '<div class="sake-desc">' + esc(it.desc) + '</div>' +
             (it.price ? '<div class="sake-price">💴 ' + esc(it.price) + '</div>' : '') +
+            (it.q ? '<a class="mapbtn alt sake-photo" href="https://www.google.com/search?tbm=isch&q=' + enc(it.q) + '" target="_blank" rel="noopener">📷 실제 사진 보기</a>' : '') +
           '</div>' +
         '</div>';
       });
