@@ -134,6 +134,13 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .warn-card{background:var(--danger-bg);border-color:#ffcdd2}
 .warn-card .card-h{color:var(--danger)}
 
+/* 가성비 사케 */
+.sake-list{display:grid;gap:10px;margin-top:4px}
+.sake-item{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:#fffdfa}
+.sake-top{font-weight:800}
+.sake-desc{margin-top:3px;font-size:.9rem;color:#514c5b;line-height:1.5}
+.sake-price{margin-top:4px;font-size:.82rem;color:var(--pink-d);font-weight:700}
+
 /* 비 오는 날 대체지 */
 .rain-list{display:grid;gap:12px;margin-top:6px}
 .rain-item{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fbfdff}

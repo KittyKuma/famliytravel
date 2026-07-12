@@ -79,6 +79,7 @@
       ['#/rain', '🌧️', '비 오는 날', '실내 대체지'],
       ['#/places', '🏯', '장소 상세', '레고랜드·성·산리오'],
       ['#/food', '🍽️', '식당 추천', '아이 동반'],
+      ['#/sake', '🍶', '가성비 사케', '어른 선물·기념'],
       ['#/phrases', '🗣️', '일본어 회화', '음성·복사'],
       ['#/metro', '🚉', '지하철·이동', '노선도'],
       ['#/arrival', '🛬', '공항 입국', 'KIX'],
@@ -378,6 +379,33 @@
     ov.querySelector('.speak-ov').addEventListener('click', () => speak(jp));
     document.body.appendChild(ov);
   }
+
+  // 가성비 사케
+  pages.sake = function () {
+    const wrap = el('div');
+    const s = T.sake;
+    const intro = card('🍶 가성비 사케 추천');
+    intro.innerHTML += '<p class="lead">' + esc(s.intro) + '</p>';
+    wrap.appendChild(intro);
+    s.groups.forEach((g) => {
+      const c = card(g.title, 'sake-card');
+      const list = el('div', 'sake-list');
+      g.items.forEach((it) => {
+        list.innerHTML += '<div class="sake-item">' +
+          '<div class="sake-top"><b>' + esc(it.name) + '</b> <span class="ja">' + esc(it.ja) + '</span></div>' +
+          '<div class="sake-desc">' + esc(it.desc) + '</div>' +
+          (it.price ? '<div class="sake-price">💴 ' + esc(it.price) + '</div>' : '') +
+          '</div>';
+      });
+      c.appendChild(list);
+      wrap.appendChild(c);
+    });
+    const tips = card('💡 고르기 · 구매 팁');
+    tips.innerHTML += '<ul class="bul">' + s.tips.map((t) => '<li>' + esc(t) + '</li>').join('') + '</ul>';
+    tips.innerHTML += '<p class="note">' + esc(s.customs) + '</p><div>' + verifiedTag(s.verified) + '</div>';
+    wrap.appendChild(tips);
+    return wrap;
+  };
 
   // 지하철·이동
   pages.metro = function () {
