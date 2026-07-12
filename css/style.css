@@ -156,6 +156,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .food-top{display:flex;align-items:center;gap:8px;font-weight:800}
 .food-why{margin-top:6px;font-size:.92rem;color:#514c5b}
 .food-dish{margin-top:5px;font-size:.86rem;color:var(--sky-d);font-weight:700}
+.food-hours{margin-top:5px;font-size:.82rem;color:#514c5b}
 
 /* ── 일본어 회화 ── */
 .phrase-card .phrase{border-bottom:1px solid var(--line);padding:12px 0}
