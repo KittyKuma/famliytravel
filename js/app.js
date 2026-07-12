@@ -381,21 +381,37 @@
   }
 
   // 가성비 사케
+  const SAKE_COLORS = ['#d9a441', '#6ea88a', '#6b7fd9'];
+  function sakeBottle(label, color) {
+    return '<svg class="sake-bottle" viewBox="0 0 60 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+      '<rect x="25" y="4" width="10" height="9" rx="2" fill="#9a9aa2"/>' +
+      '<rect x="26" y="11" width="8" height="27" fill="' + color + '"/>' +
+      '<path d="M19 39 Q30 34 41 39 L45 62 Q46 72 46 92 L46 138 Q46 146 38 146 L22 146 Q14 146 14 138 L14 92 Q14 72 15 62 Z" fill="' + color + '"/>' +
+      '<rect x="16.5" y="82" width="27" height="50" rx="3" fill="#fffef8" stroke="rgba(0,0,0,.14)"/>' +
+      '<text x="30" y="90" text-anchor="middle" style="writing-mode:vertical-rl;text-orientation:upright;font-size:12px;font-weight:800;fill:#3a3a40;letter-spacing:1px">' + esc(label) + '</text>' +
+    '</svg>';
+  }
   pages.sake = function () {
     const wrap = el('div');
     const s = T.sake;
     const intro = card('🍶 가성비 사케 추천');
     intro.innerHTML += '<p class="lead">' + esc(s.intro) + '</p>';
+    intro.innerHTML += '<p class="note">병 그림은 알아보기 쉽게 그린 일러스트예요(실제 라벨과 다를 수 있어요). 매장에선 큰 일본어 표기로 찾으세요.</p>';
     wrap.appendChild(intro);
-    s.groups.forEach((g) => {
+    s.groups.forEach((g, gi) => {
+      const color = SAKE_COLORS[gi % SAKE_COLORS.length];
       const c = card(g.title, 'sake-card');
       const list = el('div', 'sake-list');
       g.items.forEach((it) => {
         list.innerHTML += '<div class="sake-item">' +
-          '<div class="sake-top"><b>' + esc(it.name) + '</b> <span class="ja">' + esc(it.ja) + '</span></div>' +
-          '<div class="sake-desc">' + esc(it.desc) + '</div>' +
-          (it.price ? '<div class="sake-price">💴 ' + esc(it.price) + '</div>' : '') +
-          '</div>';
+          sakeBottle(it.short || it.ja, color) +
+          '<div class="sake-body">' +
+            '<div class="sake-top"><b>' + esc(it.name) + '</b></div>' +
+            '<div class="sake-ja">' + esc(it.ja) + '</div>' +
+            '<div class="sake-desc">' + esc(it.desc) + '</div>' +
+            (it.price ? '<div class="sake-price">💴 ' + esc(it.price) + '</div>' : '') +
+          '</div>' +
+        '</div>';
       });
       c.appendChild(list);
       wrap.appendChild(c);
