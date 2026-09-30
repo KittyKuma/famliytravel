@@ -211,6 +211,7 @@
       if (it.verified) inner += '<div>' + verifiedTag(it.verified) + '</div>';
       inner += '<div class="tl-actions">';
       if (it.map) inner += mapBtn('지도', it.map) + ' ' + '<a class="mapbtn" href="' + mapDir(it.map) + '" target="_blank" rel="noopener">🧭 길찾기</a>';
+      if (it.walk) inner += '<a class="mapbtn route-btn" href="' + mapRoute({ origin: it.walk.from, destination: it.walk.to, mode: 'walking' }) + '" target="_blank" rel="noopener">🚶 ' + esc(it.walk.label) + '</a>';
       if (it.link) inner += '<a class="mapbtn alt" href="' + L(it.link.to) + '">' + esc(it.link.label) + ' <span class="go">›</span></a>';
       inner += '</div></div>';
       row.innerHTML = inner;
@@ -681,6 +682,8 @@
         });
       }
       if (sec.kv) c.innerHTML += kvList(sec.kv);
+      if (sec.steps) { const ol = steps(sec.steps); c.appendChild(ol); }
+      if (sec.walks) c.innerHTML += '<div class="tl-actions">' + sec.walks.map((w) => '<a class="mapbtn route-btn" href="' + mapRoute({ origin: w.from, destination: w.to, mode: 'walking' }) + '" target="_blank" rel="noopener">🚶 ' + esc(w.label) + '</a>').join('') + '</div>';
       if (sec.bullets) c.innerHTML += bullets(sec.bullets);
       if (sec.note) c.innerHTML += '<p class="note">' + sec.note + '</p>';
       if (sec.verified) c.innerHTML += '<div>' + verifiedTag(sec.verified) + '</div>';
