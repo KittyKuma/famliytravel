@@ -1,6 +1,6 @@
 'use strict';
 /* 오사카 가족여행 가이드 — 오프라인 서비스워커 */
-const CACHE = 'osaka-guide-v10';
+const CACHE = 'osaka-guide-v11';
 const ASSETS = [
   './',
   './index.html',
@@ -28,17 +28,14 @@ self.addEventListener('fetch', (e) => {
   const url = new URL(req.url);
   // 지도·외부 링크는 네트워크 그대로 (캐시하지 않음)
   if (url.origin !== location.origin) return;
-  // 앱 자원: 캐시 우선 + 백그라운드 갱신
+  // 앱 자원: 네트워크 우선(항상 최신) → 오프라인일 때만 저장본 사용
   e.respondWith(
-    caches.match(req).then((cached) => {
-      const net = fetch(req).then((res) => {
-        if (res && res.status === 200) {
-          const copy = res.clone();
-          caches.open(CACHE).then((c) => c.put(req, copy));
-        }
-        return res;
-      }).catch(() => cached);
-      return cached || net;
-    })
+    fetch(req, { cache: 'no-cache' }).then((res) => {
+      if (res && res.status === 200) {
+        const copy = res.clone();
+        caches.open(CACHE).then((c) => c.put(req, copy));
+      }
+      return res;
+    }).catch(() => caches.match(req, { ignoreSearch: true }).then((cached) => cached || caches.match('./index.html')))
   );
 });
