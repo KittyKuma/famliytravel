@@ -342,7 +342,9 @@
         '<div class="ja">' + esc(r.ja) + ' · ' + esc(r.area) + '</div>' +
         '<div class="food-why">' + esc(r.why) + '</div>' +
         '<div class="food-dish">🍜 추천: ' + esc(r.dish) + '</div>' +
+        (r.price ? '<div class="food-price">💴 ' + esc(r.price) + '</div>' : '') +
         (r.hours ? '<div class="food-hours">🕘 ' + esc(r.hours) + '</div>' : '') +
+        (r.closed ? '<div class="food-closed' + (r.closed.indexOf('⚠️') === 0 ? ' warn' : '') + '">' + esc(r.closed) + '</div>' : '') +
         (r.note ? '<div class="note">' + esc(r.note) + '</div>' : '') +
         (r.verified ? '<div>' + verifiedTag(r.verified) + '</div>' : '') +
         '<div class="tl-actions">' + mapBtn(r.map ? '지도' : '근처 찾기', r.map) + '</div>' +
