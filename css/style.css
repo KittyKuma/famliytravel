@@ -271,3 +271,28 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   .place-list{grid-template-columns:1fr 1fr}
   .food-list{grid-template-columns:1fr 1fr}
 }
+
+/* ── 여러 여행 지원 · 10월 여행 추가 요소 ── */
+.heat-banner.autumn{background:linear-gradient(90deg,#e0803a,#f2b35b)}
+.menu-grid.one{grid-template-columns:1fr}
+.past-item{background:#f6f2f7;border-color:#e6dce9}
+body.archived .app-header{background:linear-gradient(135deg,#b9a6c4,#d9c9e0 55%,#9fc3d4)}
+.tl-alt{margin-top:5px;font-size:.84rem;color:#7a5c10;background:var(--yellow-l);border-radius:9px;padding:5px 9px}
+.kind-shop{background:linear-gradient(90deg,#fff3f8,transparent)}
+.pm-dist{margin-top:3px;font-size:.82rem;color:var(--sky-d);font-weight:700}
+.route-btn{background:#2b8a5b}
+.route-steps{margin:8px 0 4px;padding-left:22px}
+.route-steps li{margin:3px 0;font-weight:600}
+.route-steps li:first-child,.route-steps li:last-child{color:var(--pink-d)}
+.loc-list{display:grid;gap:10px}
+.loc{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fbfdff}
+.loc-top a{text-decoration:none}
+.loc-where{margin-top:5px;font-size:.88rem;color:#514c5b}
+.area-map{width:100%;height:auto;margin:10px 0 4px;border-radius:14px;background:#fbfdff;border:1px solid var(--line)}
+.opt{border:1px solid var(--line);border-radius:14px;padding:12px;margin:10px 0;background:#fbfdff}
+.opt.best{border-color:#9fd8bd;background:#f3fbf6}
+.opt-top{display:flex;align-items:center;gap:8px;font-weight:800}
+.opt-badge{background:#2b8a5b;color:#fff;font-size:.72rem;font-weight:800;padding:2px 8px;border-radius:999px}
+.opt .kv b{flex-basis:78px}
+.tabbar a span{white-space:nowrap}
+@media(min-width:560px){ .loc-list{grid-template-columns:1fr 1fr} }
