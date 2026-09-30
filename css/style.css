@@ -296,3 +296,15 @@ body.archived .app-header{background:linear-gradient(135deg,#b9a6c4,#d9c9e0 55%,
 .opt .kv b{flex-basis:78px}
 .tabbar a span{white-space:nowrap}
 @media(min-width:560px){ .loc-list{grid-template-columns:1fr 1fr} }
+
+/* Visit Japan Web 입력 도우미 */
+.vf{padding:11px 0;border-bottom:1px solid var(--line)}
+.vf:last-child{border-bottom:0}
+.vf-label{font-weight:800;font-size:.92rem}
+.vf-en{color:var(--muted);font-weight:600;font-size:.78rem}
+.vf-row{display:flex;align-items:center;gap:8px;margin-top:6px}
+.vf-val{flex:1;min-width:0;font-family:ui-monospace,Consolas,monospace;font-size:1rem;font-weight:700;
+  background:var(--sky-l);border:1px solid #d6eef7;border-radius:10px;padding:8px 10px;overflow-wrap:anywhere}
+.vf-copy{flex:0 0 auto}
+.vf-self{margin-top:6px;font-size:.9rem;color:#7a5c10;background:var(--yellow-l);border-radius:10px;padding:7px 10px}
+.vf-how{margin-top:5px;font-size:.82rem;color:var(--muted)}

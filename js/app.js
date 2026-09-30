@@ -689,6 +689,38 @@
     return wrap;
   };
 
+  // Visit Japan Web 입력 도우미 (입력 순서대로 복사 버튼)
+  pages.vjw = function () {
+    const wrap = el('div');
+    const V = T.vjw;
+    const head = card(V.title);
+    head.innerHTML += '<p class="lead">' + V.intro + '</p>' +
+      '<div class="tl-actions"><a class="mapbtn" href="' + V.url + '" target="_blank" rel="noopener">🛂 Visit Japan Web 열기 <span class="go">›</span></a></div>';
+    wrap.appendChild(head);
+    const st = card('🧭 입력 순서');
+    st.appendChild(steps(V.steps));
+    wrap.appendChild(st);
+    V.groups.forEach((g) => {
+      const c = card(g.title, 'vjw-card');
+      if (g.lead) c.innerHTML += '<p class="note">' + g.lead + '</p>';
+      g.fields.forEach((f) => {
+        c.innerHTML += '<div class="vf">' +
+          '<div class="vf-label">' + esc(f.label) + (f.en ? ' <span class="vf-en">' + esc(f.en) + '</span>' : '') + '</div>' +
+          (f.value != null
+            ? '<div class="vf-row"><code class="vf-val">' + esc(f.value) + '</code><button class="ph-btn copy vf-copy" data-jp="' + esc(f.value) + '">📋 복사</button></div>'
+            : '<div class="vf-self">✍️ ' + esc(f.self) + '</div>') +
+          (f.how ? '<div class="vf-how">' + esc(f.how) + '</div>' : '') +
+          '</div>';
+      });
+      wrap.appendChild(c);
+    });
+    const tips = card('💡 알아두면 편해요');
+    tips.innerHTML += bullets(V.tips) + '<div>' + verifiedTag(V.verified) + '</div>';
+    wrap.appendChild(tips);
+    wrap.querySelectorAll('.vf-copy').forEach((b) => b.addEventListener('click', () => copyText(b.dataset.jp, b)));
+    return wrap;
+  };
+
   // ── 라우터 ────────────────────────────────────────────
   function route() {
     const hash = location.hash || '#/home';

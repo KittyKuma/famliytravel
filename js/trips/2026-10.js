@@ -16,6 +16,7 @@ window.TRIPS['2026-10'] = {
   menu: [
     ['#/today', '📍', '오늘의 일정', '날짜에 맞춰 자동'],
     ['#/plan', '🗓️', '전체 일정', 'DAY 1·2·3'],
+    ['#/vjw', '🛂', 'Visit Japan Web', '입력값 복사'],
     ['#/map', '🗺️', '동선·위치 지도', '주요 방문처'],
     ['#/transit', '🚉', '교통 가이드', '공항·시내·택시'],
     ['#/metro', '🚇', '숙소 기준 노선', '닛폰바시역'],
@@ -577,6 +578,70 @@ window.TRIPS['2026-10'] = {
     ],
   },
 
+  // ── Visit Japan Web 입력 도우미 ───────────────────────────
+  vjw: {
+    title: '🛂 Visit Japan Web 입력 도우미',
+    url: 'https://www.vjw.digital.go.jp/',
+    intro: 'VJW는 <b>영문 대문자·숫자만</b> 입력돼서 호텔 주소 같은 칸이 어려워요. 이 페이지 순서대로 <b>📋 복사 → VJW 칸에 붙여넣기</b> 하면 돼요. 여권 정보는 이 사이트에 저장하지 않으니, 노란 칸(✍️)은 각자 여권을 보고 입력하세요.',
+    steps: [
+      { step: '계정 만들기', desc: '이메일 + 비밀번호로 가입 → 이메일로 온 인증코드 입력. 한 사람(대표)이 만들면 돼요.' },
+      { step: '본인 정보 (대표자)', desc: '여권 사진면을 카메라로 찍으면 자동 입력돼요(가장 편함). 안 되면 아래 ✍️ 칸을 보고 직접.' },
+      { step: '동반 가족 등록', desc: '함께 입국하는 가족을 한 계정에 최대 10명까지 추가 가능(아이는 여기서 등록). 가족 범위가 애매한 어른은 본인 계정을 따로 만들어도 돼요.' },
+      { step: '입국·귀국 예정 등록', desc: '여행 이름·도착일·항공편·숙소를 입력 — 아래 복사 값 그대로!' },
+      { step: '입국심사 · 세관 신고', desc: '4명 각각 작성(동반 가족도 한 명씩 선택해서 입력). 대부분 "아니요".' },
+      { step: 'QR 코드 확인', desc: '완료되면 사람마다 QR이 나와요. 공항에서 인터넷이 안 될 수 있으니 4명 QR을 모두 스크린샷!' },
+    ],
+    groups: [
+      { title: '① 본인·동반가족 정보 (여권 보고 입력)', lead: '여권 사진면과 똑같이 영문 대문자로. 4명 모두 같은 방식이에요.',
+        fields: [
+          { label: '성 / 이름', en: 'Surname / Given name', self: '여권 영문 그대로 (예: KIM / MINJI). 띄어쓰기·하이픈도 여권과 동일하게' },
+          { label: '생년월일 · 성별', en: 'Date of birth / Sex', self: '여권 기재 그대로 · 성별 FEMALE' },
+          { label: '국적', en: 'Nationality', value: 'KOREA (REPUBLIC OF)', how: '목록에서 선택 (한국 = Republic of Korea)' },
+          { label: '여권번호 · 만료일', en: 'Passport No. / Expiry', self: '여권 번호(M로 시작하는 9자리 등)와 만료일' },
+          { label: '거주 국가 / 도시', en: 'Country / City of residence', value: 'BUSAN', how: '국가는 KOREA (REPUBLIC OF) 선택, 도시는 사는 곳(부산이면 BUSAN)' },
+          { label: '동반가족 관계', en: 'Relationship', self: '대표자 기준 관계를 목록에서 선택(자녀·부모 등)' },
+        ] },
+      { title: '② 입국·귀국 예정 (여행 정보)', lead: '모두 복사해서 붙여넣으면 돼요.',
+        fields: [
+          { label: '여행 이름 (아무거나)', en: 'Trip name', value: 'OSAKA OCT 2026', how: '본인만 보는 이름이라 자유롭게' },
+          { label: '일본 도착 예정일', en: 'Arrival date', value: '2026/10/07', how: '달력에서 10월 7일 선택' },
+          { label: '항공사', en: 'Airline', value: 'EASTAR JET', how: '목록에서 선택 (코드 ZE)' },
+          { label: '편명', en: 'Flight No.', value: '913', how: '숫자만 넣는 칸이면 913 (칸이 4자리를 요구하면 0913)' },
+          { label: '출발지 (마지막 탑승지)', en: 'Departure / Last port', value: 'BUSAN', how: '국가 KOREA (REPUBLIC OF), 공항 BUSAN(김해)' },
+          { label: '도착 공항', en: 'Arrival airport', value: 'KANSAI INTERNATIONAL AIRPORT', how: '목록에서 KANSAI 선택' },
+          { label: '체류 예정 기간', en: 'Length of stay', value: '3', how: '단위는 DAYS(일). 10/7~10/9 = 3일' },
+          { label: '입국 목적', en: 'Purpose of visit', value: 'TOURISM', how: '목록에서 관광(Tourism) 선택' },
+        ] },
+      { title: '③ 일본 체류지 (숙소) ⭐ 가장 어려운 칸', lead: '우편번호를 넣고 "주소 자동 입력"을 누르면 도도부현·시구정촌이 채워져요. 나머지는 복사!',
+        fields: [
+          { label: '우편번호', en: 'Postal code', value: '5420073', how: '숫자만(하이픈 없이). 542-0073' },
+          { label: '도도부현', en: 'Prefecture', value: 'OSAKA', how: '우편번호 자동 입력 또는 목록에서 OSAKA' },
+          { label: '시구정촌', en: 'City / Ward', value: 'OSAKA-SHI CHUO-KU', how: '목록에서 오사카시 주오구(CHUO-KU, OSAKA-SHI) 선택' },
+          { label: '주소 (번지)', en: 'Street address', value: '1-4-18 NIPPONBASHI', how: '대문자·숫자만. NIPPOMBASHI로 안내되는 곳도 있지만 어느 쪽도 괜찮아요' },
+          { label: '숙소 이름', en: 'Hotel name', value: 'ONYADO NONO NAMBA NATURAL HOT SPRING', how: '영문 대문자' },
+          { label: '숙소 전화번호', en: 'Phone', value: '0662115489', how: '숫자만(06-6211-5489)' },
+          { label: '(참고) 한 줄 영문 주소', en: 'Full address', value: '1-4-18 NIPPONBASHI, CHUO-KU, OSAKA-SHI, OSAKA 542-0073', how: '한 칸에 전체 주소를 넣으라고 할 때' },
+        ] },
+      { title: '④ 입국심사 · 세관 질문', lead: '관광객은 보통 전부 "아니요(No)"예요. 해당되는 게 있을 때만 "예".',
+        fields: [
+          { label: '일본에서 강제퇴거·입국거부 이력 / 유죄판결 / 금지약물·총포 소지', en: 'Immigration questions', value: 'NO', how: '해당 없으면 모두 아니요' },
+          { label: '반입 금지·제한 물품 (고기 가공품·과일·식물 등)', en: 'Prohibited / restricted items', value: 'NO', how: '⚠️ 육포·소시지·햄 등 고기가 든 식품은 반입 금지 — 가져가지 마세요' },
+          { label: '면세 범위 초과 물품 · 상업용 물품 · 남의 부탁 물품', en: 'Duty-free allowance etc.', value: 'NO', how: '일반 여행 짐이면 아니요' },
+          { label: '100만 엔 상당 이상 현금·수표', en: 'Cash over ¥1,000,000', value: 'NO', how: '1인 기준' },
+          { label: '별송품 (따로 부친 짐)', en: 'Unaccompanied baggage', value: 'NO', how: '택배로 따로 보낸 짐이 없으면 아니요' },
+        ] },
+    ],
+    tips: [
+      '<b>출발 1~2일 전</b>까지 완료하세요. 수요일 새벽 비행기라 <b>10/6(화) 저녁</b>까지 끝내 두면 안심.',
+      '공항에서는 사람마다 QR을 보여줘요 → <b>4명 QR 스크린샷</b>을 대표자 폰에 저장.',
+      '여권 사진면 카메라 인식이 제일 빠르고 오타가 없어요.',
+      '호텔 주소가 헷갈리면 이 페이지를 그대로 따라 하면 돼요(숙소 예약확인서의 영문 주소와 같은 내용).',
+      '회원가입은 한 사람만 해도 돼요. 동반가족으로 넣기 애매하면 각자 계정을 만들어도 괜찮아요.',
+      'VJW를 안 해도 입국은 가능하지만(종이 카드 작성) 줄이 길어요.',
+    ],
+    verified: '2026-09-30',
+  },
+
   // ── 공항 입국/출국 ────────────────────────────────────────
   arrival: {
     inTitle: '🛬 간사이공항 1터미널 입국 순서',
@@ -596,7 +661,7 @@ window.TRIPS['2026-10'] = {
     ],
     tips: [
       '가는 날 수요일 편은 06:55 출발 → 김해공항 05:00 전후 도착. 전날 일찍 주무세요.',
-      'Visit Japan Web은 출발 전날까지 4명 모두 등록(아이 것도 따로).',
+      'Visit Japan Web은 출발 전날까지 4명 모두 등록 — 입력값은 [Visit Japan Web 입력 도우미] 페이지에서 복사.',
       '여권 유효기간 확인(4명 모두).',
       '라피트 디지털 티켓은 가는 날/오는 날 각각 날짜 지정 구매.',
     ],
@@ -620,7 +685,7 @@ window.TRIPS['2026-10'] = {
 
   // ── 준비물 ────────────────────────────────────────────────
   checklist: [
-    { group: '📄 필수 서류', items: ['여권 4개(유효기간 확인)', '이스타항공 e티켓 (ZE913/ZE916)', '숙소 예약 확인서', 'Visit Japan Web 4명 등록', '라피트 디지털 티켓(가는 날·오는 날)', '여행자보험', '해외결제 카드(터치결제)', '엔화 현금'] },
+    { group: '📄 필수 서류', items: ['여권 4개(유효기간 확인)', '이스타항공 e티켓 (ZE913/ZE916)', '숙소 예약 확인서', 'Visit Japan Web 4명 등록(🛂 입력 도우미)', '라피트 디지털 티켓(가는 날·오는 날)', '여행자보험', '해외결제 카드(터치결제)', '엔화 현금'] },
     { group: '💊 건강', items: ['평소 먹는 약(넉넉히)', '약 이름 메모(일본어/영어)', '편한 운동화', '가벼운 가디건', '작은 크로스백', '파스'] },
     { group: '👧 아이', items: ['얇은 겉옷', '여벌 옷', '아이 상비약(해열·소화)', '간식', '작은 장난감/색칠놀이(비행기)', '캐릭터샵 용돈(예산 정하기)'] },
     { group: '🍂 날씨·온천', items: ['접이식 우산/우비', '얇은 바람막이', '온천용 머리끈', '잠옷(숙소 관내복 있음)'] },
