@@ -1,6 +1,6 @@
 'use strict';
 /* 오사카 가족여행 가이드 — 오프라인 서비스워커 */
-const CACHE = 'osaka-guide-v12';
+const CACHE = 'osaka-guide-v13';
 const ASSETS = [
   './',
   './index.html',
