@@ -239,6 +239,19 @@
     top.innerHTML += '<p class="lead">' + esc(h.summary) + '</p>';
     wrap.appendChild(top);
 
+    if (h.forecast) {
+      const F = h.forecast;
+      const fc = card(F.title, 'forecast-card');
+      if (F.lead) fc.innerHTML += '<p>' + F.lead + '</p>';
+      fc.innerHTML += '<table class="budget fc-table"><thead><tr><th>날짜</th><th>날씨</th><th class="num">기온</th><th class="num">비</th></tr></thead><tbody>' +
+        F.rows.map((r) => '<tr' + (r.trip ? ' class="fc-trip"' : '') + '><td>' + esc(r.date) + '</td><td>' + esc(r.wx) + '</td><td class="num">' + esc(r.temp) + '</td><td class="num">' + esc(r.rain) + '</td></tr>').join('') +
+        '</tbody></table>';
+      if (F.bullets) fc.innerHTML += bullets(F.bullets);
+      if (F.sources) fc.innerHTML += '<div class="tl-actions">' + F.sources.map((x) => '<a class="mapbtn" href="' + x.url + '" target="_blank" rel="noopener">🌤 ' + esc(x.label) + '</a>').join('') + '</div>';
+      if (F.verified) fc.innerHTML += '<div>' + verifiedTag(F.verified) + '</div>';
+      wrap.appendChild(fc);
+    }
+
     const rules = card(h.rulesTitle || '✅ 폭염 6수칙');
     const rl = el('div', 'rule-list');
     h.rules.forEach((r) => {
