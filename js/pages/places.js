@@ -2,7 +2,7 @@
 /* 장소: 방문처 목록(지역별) · 방문처 상세 · 아이 코스 · 동선·위치 지도 */
 (function () {
   const { ctx, pages } = OSAKA;
-  const { el, esc, card, page, mapBtn, dirBtn, routeBtn, verifiedTag, kvList, textBullets, tags } = OSAKA.ui;
+  const { el, esc, card, page, mapBtn, dirBtn, routeBtn, walkBtn, verifiedTag, kvList, textBullets, tags } = OSAKA.ui;
 
   const placeHref = (p) => ctx.P + 'place/' + p.id;
   const fromHotel = (p) => p.fromHotel ? '<div class="pm-dist">🏨 숙소에서 ' + esc(p.fromHotel) + '</div>' : '';
@@ -62,7 +62,8 @@
     ]);
     if (p.tips) c.innerHTML += '<div class="tips"><b>💡 팁</b>' + textBullets(p.tips) + '</div>';
     if (p.note) c.innerHTML += '<p class="note">' + esc(p.note) + '</p>';
-    c.innerHTML += '<div class="tl-actions">' + mapBtn('지도에서 보기', p.map) + dirBtn(p.map) + '</div>';
+    c.innerHTML += '<div class="tl-actions">' + mapBtn('지도에서 보기', p.map) + dirBtn(p.map) +
+      (p.walks || []).map((w) => walkBtn(w.from, w.to, w.label)).join('') + '</div>';
     wrap.appendChild(c);
     return wrap;
   };
