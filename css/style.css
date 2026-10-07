@@ -188,6 +188,14 @@ body.archived .app-header{background:linear-gradient(135deg,#b9a6c4,#d9c9e0 55%,
 .shop-no{display:inline-block;min-width:30px;margin-right:6px;padding:1px 6px;border-radius:999px;background:var(--pink-l);color:var(--pink-d);font-size:.78rem;font-weight:900;text-align:center}
 .loc.shop.star{border-color:#f2d27a;background:#fffcf0}
 .loc.shop.star .shop-no{background:var(--yellow);color:#6a4b00}
+.shop-badges{margin-top:5px;display:flex;gap:6px;flex-wrap:wrap}
+.sb{font-size:.74rem;font-weight:800;padding:2px 9px;border-radius:999px;background:#f2edf2;color:var(--muted)}
+.sb.sup-S{background:#e85f8a;color:#fff}
+.sb.sup-A{background:var(--pink-l);color:var(--pink-d)}
+.sb.sup-B{background:var(--sky-l);color:var(--sky-d)}
+.sb.sup-C{background:#f2edf2;color:var(--muted)}
+.sb.size{background:#e6f7ee;color:#2b8a5b}
+.shop-why{margin-top:5px;font-size:.86rem;color:#514c5b}
 
 /* 식당 */
 .food-list{display:grid;gap:12px}

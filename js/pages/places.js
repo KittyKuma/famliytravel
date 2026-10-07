@@ -85,6 +85,9 @@
         '<div class="loc shop' + (sh.star ? ' star' : '') + '">' +
           '<div class="loc-top"><span class="shop-no">' + esc(sh.no) + '</span><b>' + (sh.star ? '⭐ ' : '') + esc(sh.name) + '</b></div>' +
           '<div class="ja">' + esc(sh.ja) + '</div>' +
+          '<div class="shop-badges"><span class="sb sup-' + (sh.supply === '?' ? 'x' : sh.supply) + '">서플라이 ' + esc(sh.supply) + '</span>' +
+            (sh.size !== '?' ? '<span class="sb size">' + esc(sh.size) + '</span>' : '') + '</div>' +
+          (sh.why ? '<div class="shop-why">' + esc(sh.why) + '</div>' : '') +
           '<div class="loc-where">📍 ' + esc(sh.addr) + '</div>' +
           '<div class="pm-dist">🕘 ' + esc(sh.hours) + (sh.closed ? ' · 휴무 ' + esc(sh.closed) : '') + '</div>' +
           (sh.note ? '<div class="tl-alt">💡 ' + esc(sh.note) + '</div>' : '') +

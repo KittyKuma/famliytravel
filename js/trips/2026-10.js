@@ -381,7 +381,7 @@ window.TRIPS['2026-10'] = {
   // ── 카드샵 지도 (닛폰바시·난바) ─────────────────────────
   cardShops: {
     title: '🎴 카드샵 지도 — 난바·닛폰바시',
-    intro: 'Sunrise 주변 <b>걸어서 10분 안에 30곳 넘는 카드샵</b>이 세 구역에 모여 있어요. <b>A 난바나카(Sunrise 옆)</b> → <b>B 오타로드</b>(3~5분) → <b>C 사카이스지 덴덴타운</b>(3~5분) → 숙소(북쪽 10분) 순서로 한 바퀴 돌면 돼요. ⭐ = 먼저 들러볼 곳. 각 가게의 <b>🚶 여기서 걸어가기</b>를 누르면 지금 위치에서 길 안내가 시작돼요.',
+    intro: 'Sunrise 주변 <b>걸어서 10분 안에 30곳 넘는 카드샵</b>이 세 구역에 모여 있어요. <b>A 난바나카(Sunrise 옆)</b> → <b>B 오타로드</b>(3~5분) → <b>C 사카이스지 덴덴타운</b>(3~5분) → 숙소(북쪽 10분) 순서로 한 바퀴 돌면 돼요. 구역마다 <b>서플라이 많은 순 → 매장 큰 순</b>으로 정렬했어요. 배지: <b>서플라이 S</b>(전문급)·<b>A</b>(많음)·<b>B</b>(보통)·<b>C</b>(적음)·<b>?</b>(정보 없음), 크기 대형·중형·소형. ⭐ = 서플라이 S·A. 각 가게의 <b>🚶 여기서 걸어가기</b>를 누르면 지금 위치에서 길 안내가 시작돼요.',
     svg: '<svg class="area-map" viewBox="0 0 360 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="난바·닛폰바시 카드샵 구역 개념도">' +
       '<rect x="0" y="0" width="360" height="380" fill="#fbfdff"/>' +
       // 센니치마에 거리
@@ -409,6 +409,10 @@ window.TRIPS['2026-10'] = {
       '<text x="212" y="193" font-size="10" fill="#9a6a00" font-weight="800" text-anchor="middle">오타로드</text>' +
       '<circle cx="212" cy="230" r="7" fill="#ffd76a" stroke="#c99a00" stroke-width="2"/><text x="212" y="234" font-size="8" font-weight="900" text-anchor="middle">B1</text>' +
       '<circle cx="205" cy="300" r="7" fill="#ffd76a" stroke="#c99a00" stroke-width="2"/><text x="205" y="304" font-size="8" font-weight="900" text-anchor="middle">B2</text>' +
+      '<circle cx="222" cy="318" r="7" fill="#ffd76a" stroke="#c99a00" stroke-width="2"/><text x="222" y="322" font-size="8" font-weight="900" text-anchor="middle">B3</text>' +
+      // D1 지라풀 (난바 센니치마에 쪽)
+      '<circle cx="175" cy="88" r="8" fill="#ffd76a" stroke="#c99a00" stroke-width="2"/><text x="175" y="92" font-size="8" font-weight="900" text-anchor="middle">D1</text>' +
+      '<text x="187" y="92" font-size="10" fill="#33303a" font-weight="700">지라풀</text>' +
       // 구역 C
       '<ellipse cx="268" cy="205" rx="20" ry="70" fill="#e6f7ee" fill-opacity=".9" stroke="#2b8a5b" stroke-width="2" stroke-dasharray="5 4"/>' +
       '<text x="268" y="150" font-size="13" fill="#2b8a5b" font-weight="900" text-anchor="middle">C</text>' +
@@ -427,50 +431,55 @@ window.TRIPS['2026-10'] = {
       '<text x="20" y="365" font-size="9" fill="#7d7889">※ 개념도(축척 아님) · 노란 점 = ⭐ 가게</text>' +
       '</svg>',
     tips: [
+      '<b>FUTURISTIC 서플라이 찾기 추천 순서</b>: B2 카드라보(포켓몬 프리미엄 서플라이) → B1 TCGshop193 → B3 카드라보 오타로드 본점 → B4 스루가야(중고) → C1 호비스테이션 · 시간 되면 D1 지라풀.',
       '대부분 <b>12~14시에 열어요</b>. 오전엔 스루가야(B2, 10시)만 열려 있어요.',
       '찾는 물건: <b>30th CELEBRATION FUTURISTIC BOX 서플라이</b>. 점원에게 [회화] → 쇼핑의 "サプライのみ" 문장이나 덱실드 문장을 보여주세요.',
       '오사카에서 서플라이 단품을 판다는 X 글은 Sunrise(품절) 말고는 아직 없어요 → 가게에서 직접 물어보는 게 가장 빨라요. 박스 전체(¥61,800~65,000)는 아토·MEETS 등에서 판매 중.',
       '휴무: <b>AMTAF(B6)는 수요일</b> 휴무. 아토·JOE·레이즈는 화요일 휴무라 이번 일정(수~금)엔 영향 없어요.',
+      '등급은 블로그·정리 기사 평가(서플라이 품揃え·대전석 수)를 바탕으로 한 참고용이에요. 일반 서플라이 기준이라 FUTURISTIC 박스 구성품이 있는지는 가게마다 물어봐야 해요.',
       '가게 정보는 정리 사이트(토레카맵) 기준이라 바뀌었을 수 있어요. 🚶 버튼으로 구글 지도를 열면 영업 여부도 함께 보여요.',
     ],
     verified: '2026-10-07',
     zones: [
-      { title: 'A · 난바나카 2초메 (Sunrise 바로 옆, 난카이 난바역 남동쪽)', desc: '서로 1~3분 거리. 하레루야·트레카 챔피언은 밤 늦게까지.', shops: [
-        { no: 'A1', name: '드래곤스타 닛폰바시점', ja: 'ドラゴンスター日本橋店', addr: '浪速区難波中2-5-12', hours: '12:00~20:00', closed: '', note: '오사카 대형 체인. 포켓몬 싱글·서플라이 무난', star: true, map: 'ドラゴンスター日本橋店 浪速区難波中2-5-12' },
-        { no: 'A2', name: '카드박스 닛폰바시점', ja: 'カードボックス日本橋店', addr: '浪速区難波中2-5-12 1·2F', hours: '11:00~21:00', closed: '', note: '', star: false, map: 'カードボックス日本橋店 浪速区難波中2-5-12 1·2F' },
-        { no: 'A3', name: '트레카 라인 오사카 닛폰바시점', ja: 'トレカライン大阪日本橋店', addr: '浪速区難波中2-6-21 3F', hours: '12:30~21:00', closed: '', note: 'Sunrise 계열 가게', star: false, map: 'トレカライン大阪日本橋店 浪速区難波中2-6-21 3F' },
-        { no: 'A4', name: '트레카 봄', ja: 'トレカボム大阪日本橋店', addr: '浪速区難波中2-6-6', hours: '13:00~21:00', closed: '', note: '', star: false, map: 'トレカボム大阪日本橋店 浪速区難波中2-6-6' },
-        { no: 'A5', name: '카드숍 JOE', ja: 'カードショップJOE日本橋店', addr: '浪速区難波中2-7-7 1F', hours: '12:00~20:00', closed: '화', note: '', star: false, map: 'カードショップJOE日本橋店 浪速区難波中2-7-7 1F' },
-        { no: 'A6', name: '트레카 파크', ja: 'トレカパーク日本橋店', addr: '浪速区難波中2-4-9', hours: '12:00~20:00', closed: '', note: '', star: false, map: 'トレカパーク日本橋店 浪速区難波中2-4-9' },
-        { no: 'A7', name: '플레이즈 오타로드점', ja: 'プレイズ 日本橋オタロード店', addr: '浪速区難波中2-4-4', hours: '12:00~20:00', closed: '', note: '', star: false, map: 'プレイズ 日本橋オタロード店 浪速区難波中2-4-4' },
-        { no: 'A8', name: 'ALANN 닛폰바시', ja: 'ALANN日本橋', addr: '浪速区難波中2-4-3 3F', hours: '12:00~20:00', closed: '', note: '', star: false, map: 'ALANN日本橋 浪速区難波中2-4-3 3F' },
-        { no: 'A9', name: '하레루야 닛폰바시점', ja: '晴れる屋 日本橋店', addr: '浪速区難波中2-2-15 2F', hours: '14:00~23:00', closed: '', note: '늦게까지 영업 · 매직(MTG)이 강하지만 포켓몬도 취급', star: false, map: '晴れる屋 日本橋店 浪速区難波中2-2-15 2F' },
-        { no: 'A10', name: '트레카 챔피언 난바 닛폰바시점', ja: 'トレカチャンピオンなんば日本橋店', addr: '浪速区難波中2-2-5 3·4F', hours: '13:00~22:00', closed: '', note: '', star: false, map: 'トレカチャンピオンなんば日本橋店 浪速区難波中2-2-5 3·4F' },
-        { no: 'A11', name: '드래곤스타 닛폰바시 2호점', ja: 'ドラゴンスター日本橋2号店', addr: '浪速区難波中2-1-17 6F', hours: '12:00~21:00', closed: '', note: '', star: false, map: 'ドラゴンスター日本橋2号店 浪速区難波中2-1-17 6F' },
+      { title: 'A · 난바나카 2초메 (Sunrise 바로 옆, 난카이 난바역 남동쪽)', desc: '서로 1~3분 거리. 서플라이는 Bee본포·트레카파크·ALANN 순.', shops: [
+        { no: 'A1', name: 'Bee본포 오사카 본점', ja: 'Bee本舗 大阪本店', addr: '浪速区難波中2-1-18 小池ビル', hours: '12:00~20:00', closed: '', supply: 'A', size: '대형', why: '대형 매장 · 슬리브·플레이매트 등 서플라이 충실 · 가격 저렴한 편', note: '', star: true, map: 'Bee本舗 大阪本店 浪速区難波中2-1-18 小池ビル' },
+        { no: 'A2', name: '트레카 파크 닛폰바시점', ja: 'トレカパーク日本橋店', addr: '浪速区難波中2-4-9', hours: '12:00~20:00', closed: '', supply: 'A', size: '?', why: '슬리브·덱케이스가 많다는 평(캐릭터·무지 모두)', note: '', star: true, map: 'トレカパーク日本橋店 浪速区難波中2-4-9' },
+        { no: 'A3', name: 'ALANN 닛폰바시', ja: 'ALANN日本橋', addr: '浪速区難波中2-4-3 3F', hours: '12:00~20:00', closed: '', supply: 'A', size: '소형', why: '작지만 슬리브 종류가 다양(해외판 강점)', note: '', star: true, map: 'ALANN日本橋 浪速区難波中2-4-3 3F' },
+        { no: 'A4', name: '드래곤스타 닛폰바시점', ja: 'ドラゴンスター日本橋店', addr: '浪速区難波中2-5-12', hours: '12:00~20:00', closed: '', supply: 'B', size: '소형', why: '매장은 작지만 신상품·진열이 보기 좋음 · 서플라이 보통', note: '', star: false, map: 'ドラゴンスター日本橋店 浪速区難波中2-5-12' },
+        { no: 'A5', name: '하레루야 닛폰바시점', ja: '晴れる屋 日本橋店', addr: '浪速区難波中2-2-15 2F', hours: '14:00~23:00', closed: '', supply: '?', size: '대형', why: '대형이지만 매직(MTG) 중심 · 밤 늦게까지', note: '', star: false, map: '晴れる屋 日本橋店 浪速区難波中2-2-15 2F' },
+        { no: 'A6', name: '드래곤스타 닛폰바시 2호점', ja: 'ドラゴンスター日本橋2号店', addr: '浪速区難波中2-1-17 6F', hours: '12:00~21:00', closed: '', supply: 'C', size: '대형', why: '대전석 168석의 큰 매장 · 서플라이는 적은 편', note: '', star: false, map: 'ドラゴンスター日本橋2号店 浪速区難波中2-1-17 6F' },
+        { no: 'A7', name: '카드박스 닛폰바시점', ja: 'カードボックス日本橋店', addr: '浪速区難波中2-5-12 1·2F', hours: '11:00~21:00', closed: '', supply: 'C', size: '중형', why: '대전석 114석 · 서플라이 적지만 특가품이 가끔', note: '', star: false, map: 'カードボックス日本橋店 浪速区難波中2-5-12 1·2F' },
+        { no: 'A8', name: '플레이즈 오타로드점', ja: 'プレイズ 日本橋オタロード店', addr: '浪速区難波中2-4-4', hours: '12:00~20:00', closed: '', supply: '?', size: '?', why: '', note: '', star: false, map: 'プレイズ 日本橋オタロード店 浪速区難波中2-4-4' },
+        { no: 'A9', name: '트레카 챔피언 난바 닛폰바시점', ja: 'トレカチャンピオンなんば日本橋店', addr: '浪速区難波中2-2-5 3·4F', hours: '13:00~22:00', closed: '', supply: '?', size: '?', why: '밤 늦게까지', note: '', star: false, map: 'トレカチャンピオンなんば日本橋店 浪速区難波中2-2-5 3·4F' },
+        { no: 'A10', name: '트레카 라인', ja: 'トレカライン大阪日本橋店', addr: '浪速区難波中2-6-21 3F', hours: '12:30~21:00', closed: '', supply: '?', size: '?', why: 'Sunrise 계열', note: '', star: false, map: 'トレカライン大阪日本橋店 浪速区難波中2-6-21 3F' },
+        { no: 'A11', name: '트레카 봄', ja: 'トレカボム大阪日本橋店', addr: '浪速区難波中2-6-6', hours: '13:00~21:00', closed: '', supply: '?', size: '?', why: '', note: '', star: false, map: 'トレカボム大阪日本橋店 浪速区難波中2-6-6' },
+        { no: 'A12', name: '카드숍 JOE', ja: 'カードショップJOE日本橋店', addr: '浪速区難波中2-7-7 1F', hours: '12:00~20:00', closed: '화', supply: '?', size: '?', why: '', note: '', star: false, map: 'カードショップJOE日本橋店 浪速区難波中2-7-7 1F' },
       ] },
-      { title: 'B · 오타로드 (A에서 동쪽으로 3~5분)', desc: '애니·게임 가게가 늘어선 골목. 카드샵이 가장 빽빽한 곳.', shops: [
-        { no: 'B1', name: 'TCGshop193 닛폰바시점', ja: 'TCGshop193日本橋店', addr: '浪速区日本橋4-15-25 2·3F', hours: '11:00~20:00', closed: '', note: '서플라이 종류가 많다는 평 → 1순위로 확인', star: true, map: 'TCGshop193日本橋店 浪速区日本橋4-15-25 2·3F' },
-        { no: 'B2', name: '스루가야 오사카 닛폰바시 본관', ja: '駿河屋 大阪日本橋本館', addr: '浪速区日本橋4-11-3', hours: '10:00~21:00', closed: '', note: '중고 대형점 · 중고 서플라이가 나올 수 있어요 · 가장 일찍 열어요', star: true, map: '駿河屋 大阪日本橋本館 浪速区日本橋4-11-3' },
-        { no: 'B3', name: '카드숍 아토', ja: 'カードショップあーと 大阪日本橋店', addr: '浪速区日本橋4-15-6', hours: '12:00~21:00', closed: '화', note: 'FUTURISTIC BOX 박스 전체 판매(10/4 ¥61,800) · 서플라이 단품은 문의 · 현금만', star: false, map: 'カードショップあーと 大阪日本橋店 浪速区日本橋4-15-6' },
-        { no: 'B4', name: '풀콤프 오타로드점', ja: 'フルコンプ 日本橋オタロード店', addr: '浪速区日本橋4-15-20', hours: '영업시간 확인 필요', closed: '', note: '', star: false, map: 'フルコンプ 日本橋オタロード店 浪速区日本橋4-15-20' },
-        { no: 'B5', name: '트레카숍 히키상점', ja: 'トレカショップ比希商店 オタロード店', addr: '浪速区日本橋4-15-13 3F', hours: '12:00~20:00', closed: '', note: '', star: false, map: 'トレカショップ比希商店 オタロード店 浪速区日本橋4-15-13 3F' },
-        { no: 'B6', name: 'AMTAF 닛폰바시점', ja: 'AMTAF日本橋店', addr: '浪速区日本橋4-15-1', hours: '12:00~20:00', closed: '수', note: '⚠️ 수요일 휴무 → 10/7(수)은 쉬어요', star: false, map: 'AMTAF日本橋店 浪速区日本橋4-15-1' },
-        { no: 'B7', name: '풀어헤드 오사카 닛폰바시점', ja: 'フルアヘッド大阪日本橋店', addr: '浪速区日本橋4-11-6 3F', hours: '12:00~20:00', closed: '', note: '포켓몬카드 공식 짐(ジム) 등록점', star: false, map: 'フルアヘッド大阪日本橋店 浪速区日本橋4-11-6 3F' },
-        { no: 'B8', name: '카드숍 레이즈', ja: 'カードショップ レイズ 大阪日本橋店', addr: '浪速区日本橋4-7-26 1F', hours: '15:00~21:00', closed: '화', note: '', star: false, map: 'カードショップ レイズ 大阪日本橋店 浪速区日本橋4-7-26 1F' },
+      { title: 'B · 오타로드 (A에서 동쪽으로 3~5분)', desc: '서플라이 1위 TCGshop193 · 포켓몬 프리미엄 서플라이 카드라보가 여기.', shops: [
+        { no: 'B1', name: 'TCGshop193 닛폰바시점', ja: 'TCGshop193日本橋店', addr: '浪速区日本橋4-15-25 BRIGHTビル2·3F', hours: '11:00~20:00', closed: '', supply: 'S', size: '중형', why: '"서플라이는 아마 닛폰바시 1위"라는 평 · 해외판도 · 1순위', note: '', star: true, map: 'TCGshop193日本橋店 浪速区日本橋4-15-25 BRIGHTビル2·3F' },
+        { no: 'B2', name: '카드라보 오사카 닛폰바시점 ("천공 라보")', ja: 'カードラボ大阪日本橋店', addr: '浪速区日本橋西1-1-3 池田ビル2号館 5F', hours: '11:00~20:00', closed: '', supply: 'A', size: '중형', why: '포켓몬 프리미엄 서플라이(캐릭터 슬리브·덱케이스·매트) 확대 중 · 포켓몬 진열장 지역 최대 · 오타로드 끝', note: '', star: true, map: 'カードラボ大阪日本橋店 浪速区日本橋西1-1-3 池田ビル2号館 5F' },
+        { no: 'B3', name: '카드라보 오타로드 본점', ja: 'カードラボ オタロード本店', addr: '浪速区日本橋4-16-1', hours: '12:00~20:00 (금 11:00~)', closed: '', supply: 'A', size: '대형', why: '"지역 최대급 품揃え" · 애니메이트 맞은편 · 면세 가능', note: '', star: true, map: 'カードラボ オタロード本店 浪速区日本橋4-16-1' },
+        { no: 'B4', name: '스루가야 오사카 닛폰바시 본관', ja: '駿河屋 大阪日本橋本館', addr: '浪速区日本橋4-11-3', hours: '10:00~21:00', closed: '', supply: 'B', size: '대형', why: '중고 대형점 · 중고 서플라이가 나올 수 있어요 · 가장 일찍 열어요', note: '', star: false, map: '駿河屋 大阪日本橋本館 浪速区日本橋4-11-3' },
+        { no: 'B5', name: '풀어헤드 오사카 닛폰바시점', ja: 'フルアヘッド大阪日本橋店', addr: '浪速区日本橋4-11-6 3F', hours: '12:00~20:00', closed: '', supply: '?', size: '?', why: '포켓몬카드 공식 짐 등록점', note: '', star: false, map: 'フルアヘッド大阪日本橋店 浪速区日本橋4-11-6 3F' },
+        { no: 'B6', name: '카드숍 아토', ja: 'カードショップあーと 大阪日本橋店', addr: '浪速区日本橋4-15-6', hours: '12:00~21:00', closed: '화', supply: '?', size: '?', why: 'FUTURISTIC BOX 박스 전체 판매(10/4 ¥61,800) · 현금만', note: '', star: false, map: 'カードショップあーと 大阪日本橋店 浪速区日本橋4-15-6' },
+        { no: 'B7', name: '풀콤프 오타로드점', ja: 'フルコンプ 日本橋オタロード店', addr: '浪速区日本橋4-15-20', hours: '영업시간 확인 필요', closed: '', supply: '?', size: '?', why: '', note: '', star: false, map: 'フルコンプ 日本橋オタロード店 浪速区日本橋4-15-20' },
+        { no: 'B8', name: '트레카숍 히키상점', ja: 'トレカショップ比希商店 オタロード店', addr: '浪速区日本橋4-15-13 3F', hours: '12:00~20:00', closed: '', supply: '?', size: '?', why: '', note: '', star: false, map: 'トレカショップ比希商店 オタロード店 浪速区日本橋4-15-13 3F' },
+        { no: 'B9', name: 'AMTAF 닛폰바시점', ja: 'AMTAF日本橋店', addr: '浪速区日本橋4-15-1', hours: '12:00~20:00', closed: '수', supply: '?', size: '?', why: '', note: '', star: false, map: 'AMTAF日本橋店 浪速区日本橋4-15-1' },
+        { no: 'B10', name: '카드숍 레이즈', ja: 'カードショップ レイズ 大阪日本橋店', addr: '浪速区日本橋4-7-26 1F', hours: '15:00~21:00', closed: '화', supply: '?', size: '?', why: '', note: '', star: false, map: 'カードショップ レイズ 大阪日本橋店 浪速区日本橋4-7-26 1F' },
       ] },
-      { title: 'C · 사카이스지 덴덴타운 (B에서 동쪽 큰길, 숙소까지 북쪽 10분)', desc: '큰길(사카이스지) 서쪽 블록. 숙소로 돌아가는 길에 들르기 좋아요.', shops: [
-        { no: 'C1', name: '호비스테이션 닛폰바시 본점', ja: 'ホビーステーション日本橋本店', addr: '浪速区日本橋3-8-12 日本橋プラザ', hours: '11:00~20:00', closed: '', note: '서플라이(슬리브·매트·덱케이스) 전문 코너가 큰 체인', star: true, map: 'ホビーステーション日本橋本店 浪速区日本橋3-8-12 日本橋プラザ' },
-        { no: 'C2', name: '풀콤프 오사카 닛폰바시점', ja: 'フルコンプ大阪日本橋店', addr: '浪速区日本橋3-8-18 4F', hours: '12:00~21:00', closed: '', note: '포켓몬카드 공식 짐 등록점', star: false, map: 'フルコンプ大阪日本橋店 浪速区日本橋3-8-18 4F' },
-        { no: 'C3', name: '닌닌 오사카 닛폰바시점', ja: 'ニンニン大阪日本橋店', addr: '浪速区日本橋3-8-26 1F', hours: '13:00~20:00', closed: '', note: '', star: false, map: 'ニンニン大阪日本橋店 浪速区日本橋3-8-26 1F' },
-        { no: 'C4', name: 'MEETS 오사카 닛폰바시점', ja: 'MEETS大阪日本橋店', addr: '浪速区日本橋3-8-2', hours: '13:00~20:00', closed: '', note: 'MEETS 계열이 FUTURISTIC BOX 박스 전체 판매 글(10/1 ¥65,000) · 서플라이 단품은 문의', star: false, map: 'MEETS大阪日本橋店 浪速区日本橋3-8-2' },
-        { no: 'C5', name: '플레이즈 오사카 닛폰바시 본점', ja: 'プレイズ 大阪日本橋本店', addr: '浪速区日本橋3-7-6', hours: '12:00~22:00', closed: '', note: '', star: false, map: 'プレイズ 大阪日本橋本店 浪速区日本橋3-7-6' },
-        { no: 'C6', name: '트레카 찬스 닛폰바시점', ja: 'トレカチャンス 日本橋店', addr: '浪速区日本橋3-6-20', hours: '11:00~21:00', closed: '', note: '', star: false, map: 'トレカチャンス 日本橋店 浪速区日本橋3-6-20' },
-        { no: 'C7', name: 'magi 오사카 닛폰바시점', ja: 'magi大阪日本橋店', addr: '浪速区日本橋3-6-2', hours: '14:00~19:30', closed: '', note: '', star: false, map: 'magi大阪日本橋店 浪速区日本橋3-6-2' },
+      { title: 'C · 사카이스지 덴덴타운 (B에서 동쪽 큰길, 숙소까지 북쪽 10분)', desc: '숙소로 돌아가는 길에 들르기 좋아요.', shops: [
+        { no: 'C1', name: '호비스테이션 닛폰바시 본점 (+2층 2\'s점)', ja: 'ホビーステーション日本橋本店', addr: '浪速区日本橋3-8-12 日本橋プラザ', hours: '11:00~20:00', closed: '', supply: 'A', size: '중형', why: '슬리브가 많다는 평(캐릭터·공식) · 같은 건물 2층에 2\'s점도', note: '', star: true, map: 'ホビーステーション日本橋本店 浪速区日本橋3-8-12 日本橋プラザ' },
+        { no: 'C2', name: '플레이즈 오사카 닛폰바시 본점', ja: 'プレイズ 大阪日本橋本店', addr: '浪速区日本橋3-7-6', hours: '12:00~22:00', closed: '', supply: '?', size: '대형', why: '대전석 210석의 대형 매장', note: '', star: false, map: 'プレイズ 大阪日本橋本店 浪速区日本橋3-7-6' },
+        { no: 'C3', name: '풀콤프 오사카 닛폰바시점', ja: 'フルコンプ大阪日本橋店', addr: '浪速区日本橋3-8-18 平田ビル4F', hours: '12:00~21:00', closed: '', supply: '?', size: '?', why: '포켓몬카드 공식 짐 등록점', note: '', star: false, map: 'フルコンプ大阪日本橋店 浪速区日本橋3-8-18 平田ビル4F' },
+        { no: 'C4', name: 'MEETS 오사카 닛폰바시점', ja: 'MEETS大阪日本橋店', addr: '浪速区日本橋3-8-2', hours: '13:00~20:00', closed: '', supply: '?', size: '?', why: 'MEETS 계열 FUTURISTIC BOX 박스 전체 판매 글(10/1 ¥65,000)', note: '', star: false, map: 'MEETS大阪日本橋店 浪速区日本橋3-8-2' },
+        { no: 'C5', name: '트레카 찬스 닛폰바시점', ja: 'トレカチャンス 日本橋店', addr: '浪速区日本橋3-6-20', hours: '11:00~21:00', closed: '', supply: 'C', size: '소형', why: '작은 가게 · 가끔 희귀품', note: '', star: false, map: 'トレカチャンス 日本橋店 浪速区日本橋3-6-20' },
+        { no: 'C6', name: '닌닌 오사카 닛폰바시점', ja: 'ニンニン大阪日本橋店', addr: '浪速区日本橋3-8-26 1F', hours: '13:00~20:00', closed: '', supply: '?', size: '?', why: '', note: '', star: false, map: 'ニンニン大阪日本橋店 浪速区日本橋3-8-26 1F' },
+        { no: 'C7', name: 'magi 오사카 닛폰바시점', ja: 'magi大阪日本橋店', addr: '浪速区日本橋3-6-2', hours: '14:00~19:30', closed: '', supply: '?', size: '?', why: '', note: '', star: false, map: 'magi大阪日本橋店 浪速区日本橋3-6-2' },
       ] },
-      { title: 'D · 그 밖 (조금 떨어진 곳)', desc: '', shops: [
-        { no: 'D1', name: '카드라보 오사카 닛폰바시점', ja: 'カードラボ大阪日本橋店', addr: '浪速区日本橋西1-1-3 アニメイトビル5F', hours: '11:00~20:00', closed: '', note: '애니메이트 빌딩 5층 · 포켓몬카드 공식 짐 등록점', star: true, map: 'カードラボ大阪日本橋店 浪速区日本橋西1-1-3 アニメイトビル5F' },
-        { no: 'D2', name: '카드숍 핫치 오사카 닛폰바시점', ja: 'カードショップはっち大阪日本橋店', addr: '中央区難波千日前7-10 COCONAMBA 4F', hours: '13:00~21:00', closed: '', note: '난바역 근처(코코난바 4층)', star: false, map: 'カードショップはっち大阪日本橋店 中央区難波千日前7-10 COCONAMBA 4F' },
-        { no: 'D3', name: '트레카 Sunrise (서플라이 품절 확인)', ja: 'トレカSunrise大阪日本橋本店', addr: '浪速区難波中2-6-21', hours: '13:00~21:00', closed: '', note: '10/7 FUTURISTIC 서플라이 없음', star: false, map: 'トレカSunrise大阪日本橋本店 浪速区難波中2-6-21' },
+      { title: 'D · 그 밖 (조금 떨어진 곳)', desc: '지라풀은 서플라이 최상급이라 시간 되면 꼭.', shops: [
+        { no: 'D1', name: '지라풀 난바점 (GIRAFULL)', ja: 'GIRAFULL なんば店', addr: '中央区難波千日前13-13 難波KHビル', hours: '12:00~21:00', closed: '', supply: 'S', size: '대형', why: '슬리브·덱케이스 "최상급 품揃え" · 거의 빌딩 한 채 · 오타로드에서 조금 떨어짐(난바역 쪽)', note: '', star: true, map: 'GIRAFULL なんば店 中央区難波千日前13-13 難波KHビル' },
+        { no: 'D2', name: '카드숍 핫치', ja: 'カードショップはっち大阪日本橋店', addr: '中央区難波千日前7-10 COCONAMBA 4F', hours: '13:00~21:00', closed: '', supply: '?', size: '?', why: '난바역 근처(코코난바 4층)', note: '', star: false, map: 'カードショップはっち大阪日本橋店 中央区難波千日前7-10 COCONAMBA 4F' },
+        { no: 'D3', name: '트레카 Sunrise', ja: 'トレカSunrise大阪日本橋本店', addr: '浪速区難波中2-6-21', hours: '13:00~21:00', closed: '', supply: '?', size: '?', why: '10/7 FUTURISTIC 서플라이 품절 확인', note: '', star: false, map: 'トレカSunrise大阪日本橋本店 浪速区難波中2-6-21' },
       ] },
     ],
   },
