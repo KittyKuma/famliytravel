@@ -54,6 +54,8 @@
   const dirBtn = (query) => ext(mapDir(query), '🧭 길찾기');
   const routeBtn = (route, label) => ext(mapRoute(route), label, 'mapbtn route-btn');
   const walkBtn = (from, to, label) => routeBtn({ origin: from, destination: to, mode: 'walking' }, '🚶 ' + esc(label));
+  // 지금 내 위치에서 걸어가기 (origin 생략 = 현재 위치)
+  const walkHereBtn = (to, label) => ext('https://www.google.com/maps/dir/?api=1&destination=' + enc(to) + '&travelmode=walking', '🚶 ' + esc(label || '여기서 걸어가기'), 'mapbtn route-btn');
   const verifiedTag = (d) => d ? '<span class="verified">확인 ' + esc(d) + '</span>' : '';
   const kvList = (rows) => '<ul class="kv">' + rows.filter((r) => r[1]).map((r) => '<li><b>' + r[0] + '</b><span>' + r[1] + '</span></li>').join('') + '</ul>';
   const bullets = (arr) => '<ul class="bul">' + arr.map((i) => '<li>' + i + '</li>').join('') + '</ul>'; // 항목에 HTML 허용
@@ -117,7 +119,7 @@
     ui: {
       enc, el, esc, link, todayStr, daysUntil, store,
       mapSearch, mapDir, mapRoute,
-      card, ext, mapBtn, dirBtn, routeBtn, walkBtn, verifiedTag, kvList, bullets, textBullets, tags, steps, banner, page,
+      card, ext, mapBtn, dirBtn, routeBtn, walkBtn, walkHereBtn, verifiedTag, kvList, bullets, textBullets, tags, steps, banner, page,
       speak, copyText, bigView,
     },
   };

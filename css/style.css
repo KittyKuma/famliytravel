@@ -185,6 +185,9 @@ body.archived .app-header{background:linear-gradient(135deg,#b9a6c4,#d9c9e0 55%,
 .loc{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fbfdff}
 .loc-top a{text-decoration:none}
 .loc-where{margin-top:5px;font-size:.88rem;color:#514c5b}
+.shop-no{display:inline-block;min-width:30px;margin-right:6px;padding:1px 6px;border-radius:999px;background:var(--pink-l);color:var(--pink-d);font-size:.78rem;font-weight:900;text-align:center}
+.loc.shop.star{border-color:#f2d27a;background:#fffcf0}
+.loc.shop.star .shop-no{background:var(--yellow);color:#6a4b00}
 
 /* 식당 */
 .food-list{display:grid;gap:12px}

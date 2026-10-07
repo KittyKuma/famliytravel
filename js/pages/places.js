@@ -68,6 +68,33 @@
     return wrap;
   };
 
+  // 카드샵 지도: 번호 개념도 + 구역별 목록 (지도 · 지금 위치에서 걸어가기)
+  pages.cards = function () {
+    const C = ctx.T.cardShops;
+    const { walkHereBtn } = OSAKA.ui;
+    const wrap = page(true);
+    const head = card(C.title);
+    head.innerHTML += '<p class="lead">' + C.intro + '</p>' + C.svg;
+    if (C.tips) head.innerHTML += OSAKA.ui.bullets(C.tips);
+    head.innerHTML += '<div>' + verifiedTag(C.verified) + '</div>';
+    wrap.appendChild(head);
+    C.zones.forEach((z) => {
+      const c = card(z.title, 'cards-zone');
+      if (z.desc) c.innerHTML += '<p class="note">' + esc(z.desc) + '</p>';
+      c.appendChild(el('div', 'loc-list', z.shops.map((sh) =>
+        '<div class="loc shop' + (sh.star ? ' star' : '') + '">' +
+          '<div class="loc-top"><span class="shop-no">' + esc(sh.no) + '</span><b>' + (sh.star ? '⭐ ' : '') + esc(sh.name) + '</b></div>' +
+          '<div class="ja">' + esc(sh.ja) + '</div>' +
+          '<div class="loc-where">📍 ' + esc(sh.addr) + '</div>' +
+          '<div class="pm-dist">🕘 ' + esc(sh.hours) + (sh.closed ? ' · 휴무 ' + esc(sh.closed) : '') + '</div>' +
+          (sh.note ? '<div class="tl-alt">💡 ' + esc(sh.note) + '</div>' : '') +
+          '<div class="tl-actions">' + mapBtn('지도', sh.map) + walkHereBtn(sh.map) + '</div>' +
+        '</div>').join('')));
+      wrap.appendChild(c);
+    });
+    return wrap;
+  };
+
   // 동선·위치 지도: 개념도 + 날짜별 동선 + 지역별 위치
   pages.map = function () {
     const T = ctx.T;
