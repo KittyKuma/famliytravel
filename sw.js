@@ -1,6 +1,6 @@
 'use strict';
 /* 오사카 여행 가이드 — 오프라인 서비스워커 (네트워크 우선, 오프라인일 때만 저장본) */
-const CACHE = 'osaka-guide-v20';
+const CACHE = 'osaka-guide-v21';
 const ASSETS = [
   './',
   './index.html',

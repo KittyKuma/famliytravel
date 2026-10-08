@@ -27,6 +27,30 @@
     return wrap;
   };
 
+  // 쿠라스시 주문 방법 (단계별 안내 + 화면 버튼 이름)
+  pages.kura = function () {
+    const K = ctx.T.kuraGuide;
+    const { bullets, steps } = OSAKA.ui;
+    const wrap = page(true);
+    const head = card(K.title, 'kura-head');
+    head.innerHTML += '<p class="lead">' + K.intro + '</p>';
+    if (K.quick) head.innerHTML += '<ol class="route-steps">' + K.quick.map((q) => '<li>' + q + '</li>').join('') + '</ol>';
+    wrap.appendChild(head);
+    K.sections.forEach((sec) => {
+      const c = card(sec.title);
+      if (sec.steps) c.appendChild(steps(sec.steps));
+      if (sec.bullets) c.innerHTML += bullets(sec.bullets);
+      if (sec.buttons) c.innerHTML += '<div class="kura-btns">' + sec.buttons.map((b) =>
+        '<div class="kb"><span class="kb-ja">' + esc(b[0]) + '</span><span class="kb-ko">' + esc(b[1]) + '</span></div>').join('') + '</div>';
+      if (sec.note) c.innerHTML += '<p class="note">' + sec.note + '</p>';
+      wrap.appendChild(c);
+    });
+    const v = card(null, 'note-card');
+    v.innerHTML = '<p>' + K.footer + ' ' + verifiedTag(K.verified) + '</p>';
+    wrap.appendChild(v);
+    return wrap;
+  };
+
   // 사케 병 일러스트 (저작권 걱정 없는 SVG · 그룹마다 색)
   const SAKE_COLORS = ['#d9a441', '#6ea88a', '#6b7fd9'];
   const sakeBottle = (label, color) =>

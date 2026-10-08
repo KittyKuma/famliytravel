@@ -207,6 +207,11 @@ body.archived .app-header{background:linear-gradient(135deg,#b9a6c4,#d9c9e0 55%,
 .food-price{margin-top:5px;font-size:.84rem;color:var(--pink-d);font-weight:700}
 .food-closed{margin-top:5px;font-size:.82rem;font-weight:700;color:#2b8a5b;background:#e6f7ee;border-radius:9px;padding:4px 9px;display:inline-block}
 .food-closed.warn{color:#9a5a00;background:var(--yellow-l)}
+/* 쿠라스시 주문 방법: 화면 버튼 이름 (일본어 ↔ 뜻) */
+.kura-btns{display:grid;gap:6px;margin-top:8px}
+.kb{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:10px;padding:7px 10px;background:#fffdfa}
+.kb-ja{font-weight:900;font-size:1rem;color:#33303a;flex:0 0 auto}
+.kb-ko{font-size:.86rem;color:#514c5b}
 
 /* ── 일본어 회화 ── */
 .phrase-card .phrase{border-bottom:1px solid var(--line);padding:12px 0}
